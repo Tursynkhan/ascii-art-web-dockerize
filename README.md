@@ -1,45 +1,40 @@
-## ascii-art-web
+#### Functional
 
-# Description:
-This project receives a string as an argument and outputs the string in a graphic representation using ASCII. And prints the output via three banners: standard, shadow and thinkertoy.
-# Authors:
-@Tursynkhan
-# Usage:
-1. To run program use  the following command
+###### Has the requirement for the allowed packages been respected? (Reminder for this project: only [standard packages](https://golang.org/pkg/))
 
-```bash
-  go run ./cmd/web
+###### Does the project have a DockerFile?
+
+##### Try running the [command](https://docs.docker.com/engine/reference/commandline/image_build/) `"docker image build [OPTIONS] PATH | URL | -"` to build the image using the project Dockerfile. 
+##### Example : 
+`"docker image build -f Dockerfile -t <name_of_the_image> ."`
+
 ```
-![terminal](./ui/src-readme/start-server.png)
-
-2. Open the web browser and go to 
-
-```bash
-  http://localhost:4000
+student$ docker images
+REPOSITORY              TAG                             IMAGE ID            CREATED             SIZE
+<name of the image>     latest                          85a65d66ca39        7 seconds ago       795MB
 ```
-![home-page](./ui/src-readme/home.png)
-3. Write anything in the textarea:
-```bash
-  "Hello, Alem!"
+
+###### Run the command `"docker images"` to see all images. Is the docker image built as above?
+
+##### Try running the [command](https://docs.docker.com/engine/reference/commandline/container_run/) `"docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]"` to start the container using the image just created. (example : `"docker container run -p <port_you_what_to_run> --detach --name <name_of_the_container> <name_of_the_image>"`)
+
 ```
-4. Choose banner:
-
-```bash
-  standard (checked)
-
-  thinkertoy
-
-  shadow
+student$ docker ps -a
+CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS                    NAMES
+cc8f5dcf760f        ascii-art-web-docker   "./server"               6 seconds ago       Up 6 seconds        0.0.0.0:8080->8080/tcp   ascii-art-web
 ```
-5. Check result:
- ![result](./ui/src-readme/result.png)     
 
-# IMPLEMENTATION: 
+###### Run the command `"docker ps -a"` to see all containers. Is the docker container running as above?
 
-  1.  Write a server.go / actually a server.
+##### Try running the [command](https://docs.docker.com/engine/reference/commandline/exec/) `"docker exec [OPTIONS] CONTAINER COMMAND [ARG...]"`. (example : `"docker exec -it <container_name> /bin/bash"`) and do a `"ls -l"` to see the file system.
 
- 2.   Implement ascii-art-fs to server.
-
-   3. Code an html page and style it!
-
- 4.   Optimize and handle all errors.
+```
+student$ docker exec -it postgres /bin/bash
+I have no name!@51c2efe2d366:/$ ls -l
+drwxr-xr-x   1 root root 4096 Dec 28 15:31 bin
+-rwxr-xr-x   2 root root 4096 Sep  8 10:51 server.go
+drwxr-xr-x   2 root root 4096 Sep  8 10:51 templates
+I have no name!@51c2efe2d366:/$ exit
+exit
+student$
+```
