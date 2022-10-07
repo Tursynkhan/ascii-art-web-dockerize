@@ -29,6 +29,9 @@ cc8f5dcf760f        dockerize             "./server"               6 seconds ago
 
 ###### Run the command `"docker ps -a"` to see all containers. Is the docker container running as above?
 
+##### Tap the link
+[localhost:8080](http://localhost:8080)
+
 ##### Try running the [command](https://docs.docker.com/engine/reference/commandline/exec/) `"docker exec [OPTIONS] CONTAINER COMMAND [ARG...]"`. (example : `"docker exec -it <container_name> /bin/bash"`) and do a `"ls -l"` to see the file system.
 
 ```
@@ -41,5 +44,3 @@ I have no name!@51c2efe2d366:/$ exit
 exit
 student$
 ```
-##### Tap the link
-[localhost:8080](http://localhost:8080)
