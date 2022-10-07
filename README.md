@@ -1,6 +1,6 @@
-#### Functional
+### Functional
 
-###### Has the requirement for the allowed packages been respected? (Reminder for this project: only [standard packages](https://golang.org/pkg/))
+##### Has the requirement for the allowed packages been respected? (Reminder for this project: only [standard packages](https://golang.org/pkg/))
 
 ###### Does the project have a DockerFile?
 
@@ -14,7 +14,7 @@ REPOSITORY              TAG                             IMAGE ID            CREA
 <name of the image>     latest                          85a65d66ca39        7 seconds ago       795MB
 ```
 
-###### Run the command `"docker images"` to see all images. Is the docker image built as above?
+##### Run the command `"docker images"` to see all images. Is the docker image built as above?
 
 ##### Try running the [command](https://docs.docker.com/engine/reference/commandline/container_run/) `"docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]"` to start the container using the image just created. (example : `"docker container run -p <port_you_what_to_run> --detach --name <name_of_the_container> <name_of_the_image>"`)
 
@@ -24,7 +24,7 @@ REPOSITORY              TAG                             IMAGE ID            CREA
 ```
 student$ docker ps -a
 CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS                    NAMES
-cc8f5dcf760f        ascii-art-web-docker   "./server"               6 seconds ago       Up 6 seconds        0.0.0.0:8080->8080/tcp   ascii-art-web
+cc8f5dcf760f        dockerize             "./server"               6 seconds ago       Up 6 seconds        0.0.0.0:8080->8080/tcp   web
 ```
 
 ###### Run the command `"docker ps -a"` to see all containers. Is the docker container running as above?
@@ -32,7 +32,7 @@ cc8f5dcf760f        ascii-art-web-docker   "./server"               6 seconds ag
 ##### Try running the [command](https://docs.docker.com/engine/reference/commandline/exec/) `"docker exec [OPTIONS] CONTAINER COMMAND [ARG...]"`. (example : `"docker exec -it <container_name> /bin/bash"`) and do a `"ls -l"` to see the file system.
 
 ```
-student$ docker exec -it postgres /bin/bash
+student$ docker exec -it postgres sh
 I have no name!@51c2efe2d366:/$ ls -l
 drwxr-xr-x   1 root root 4096 Dec 28 15:31 bin
 -rwxr-xr-x   2 root root 4096 Sep  8 10:51 server.go
@@ -41,3 +41,5 @@ I have no name!@51c2efe2d366:/$ exit
 exit
 student$
 ```
+##### Tap the link
+[localhost:8080](http://localhost:8080)
