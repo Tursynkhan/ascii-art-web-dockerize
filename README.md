@@ -4,9 +4,9 @@
 
 ###### Does the project have a DockerFile?
 
-##### Try running the [command](https://docs.docker.com/engine/reference/commandline/image_build/) `"docker image build [OPTIONS] PATH | URL | -"` to build the image using the project Dockerfile. 
+##### Try running the [command](https://docs.docker.com/engine/reference/commandline/image_build/) `"docker image build o[OPTIONS] PATH | URL | -"` to build the image using the project Dockerfile. 
 ##### Example : 
-`"docker image build -f Dockerfile -t <name_of_the_image> ."`
+`"docker image build -f Dockerfile -t <name_of_the_image> ."` or  `"make build"`
 
 ```
 student$ docker images
@@ -17,6 +17,9 @@ REPOSITORY              TAG                             IMAGE ID            CREA
 ###### Run the command `"docker images"` to see all images. Is the docker image built as above?
 
 ##### Try running the [command](https://docs.docker.com/engine/reference/commandline/container_run/) `"docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]"` to start the container using the image just created. (example : `"docker container run -p <port_you_what_to_run> --detach --name <name_of_the_container> <name_of_the_image>"`)
+
+##### Example : 
+`"docker container run -p 8080:8080 --detach --name <name_of_the_container> <name_of_the_image>"` or  `"make run"`
 
 ```
 student$ docker ps -a
